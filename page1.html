@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Soniyeee ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+
+    background:
+    radial-gradient(circle at top,#fff9f3,transparent 65%),
+    linear-gradient(135deg,#f9eee8,#fffaf5);
+
+    transition:
+    opacity 1s ease,
+    transform 1s ease,
+    filter 1s ease;
+}
+
+.fade-out{
+    opacity:0;
+    transform:scale(1.08);
+    filter:blur(15px);
+}
+
+/* Floating Hearts */
+
+.heart{
+    position:absolute;
+    pointer-events:none;
+    z-index:1;
+    animation:floatUp linear infinite;
+}
+
+@keyframes floatUp{
+
+    from{
+        transform:translateY(120vh);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-150px);
+        opacity:0;
+    }
+}
+
+/* Stars */
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:#d8b98f;
+    border-radius:50%;
+    animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+
+    50%{
+        opacity:.25;
+    }
+}
+
+/* Main Container */
+
+.container{
+    position:relative;
+    z-index:20;
+    max-width:800px;
+    padding:20px;
+    animation:fadeUp 1.2s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.title{
+
+    font-size:4rem;
+    font-weight:900;
+    line-height:1.1;
+
+    background:
+    linear-gradient(
+        135deg,
+        #c19a64,
+        #e1c08d,
+        #c19a64
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.name{
+
+    color:#b77d81;
+    font-size:2.2rem;
+
+    margin-top:12px;
+}
+
+.subtitle{
+
+    margin-top:15px;
+
+    color:#80575a;
+
+    font-size:1.1rem;
+}
+
+/* Cake Section */
+
+.cake-wrap{
+
+    margin:35px 0;
+
+    animation:
+    cakeFloat 3s ease-in-out infinite;
+}
+
+@keyframes cakeFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+.candles{
+    font-size:30px;
+    margin-bottom:-10px;
+}
+
+.cake{
+    font-size:110px;
+}
+
+/* Message */
+
+.love-message{
+
+    color:#80575a;
+
+    font-size:1.25rem;
+
+    font-weight:600;
+
+    margin-top:15px;
+
+    line-height:1.8;
+}
+
+/* Button */
+
+.open-btn{
+
+    margin-top:30px;
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    background:
+    linear-gradient(
+        135deg,
+        #bd8b77,
+        #d8ae8c
+    );
+
+    color:white;
+
+    font-size:15px;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.open-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 10px 25px rgba(189,139,119,.35);
+}
+
+/* Fireworks */
+
+.firework{
+    position:absolute;
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    pointer-events:none;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .title{
+        font-size:2.6rem;
+    }
+
+    .name{
+        font-size:1.8rem;
+    }
+
+    .cake{
+        font-size:90px;
+    }
+
+    .love-message{
+        font-size:1rem;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1 class="title">
+        HAPPIEST<br>
+        BIRTHDAYYY
+    </h1>
+
+    <h2 class="name">
+        DEAR SONIYEEEE ❤️
+    </h2>
+
+    <p class="subtitle">
+        Every heartbeat of mine whispers your name ❤️
+    </p>
+
+    <div class="cake-wrap">
+
+        <div class="candles">
+            🕯️ 🕯️
+        </div>
+
+        <div class="cake">
+            🎂
+        </div>
+
+    </div>
+
+    <div class="love-message">
+        From the moment you came into my life,<br>
+        every day became more beautiful ❤️
+    </div>
+
+    <button class="open-btn" onclick="goToPage2()">
+        Open Your Surprise ✨
+    </button>
+
+</div>
+
+<script>
+
+/* Stars */
+
+for(let i=0;i<120;i++){
+
+    const star=document.createElement("div");
+
+    star.className="star";
+
+    star.style.left=Math.random()*100+"vw";
+    star.style.top=Math.random()*100+"vh";
+
+    star.style.animationDuration=
+    (1+Math.random()*4)+"s";
+
+    document.body.appendChild(star);
+}
+
+/* Hearts */
+
+for(let i=0;i<60;i++){
+
+    const heart=document.createElement("div");
+
+    heart.className="heart";
+
+    heart.innerHTML=
+    ["❤️","💕","💖","💗"]
+    [Math.floor(Math.random()*4)];
+
+    heart.style.left=
+    Math.random()*100+"vw";
+
+    heart.style.fontSize=
+    (15+Math.random()*20)+"px";
+
+    heart.style.animationDuration=
+    (6+Math.random()*8)+"s";
+
+    document.body.appendChild(heart);
+}
+
+/* Fireworks */
+
+function createFirework(){
+
+    const x=Math.random()*window.innerWidth;
+    const y=Math.random()*(window.innerHeight*0.45);
+
+    const colors=[
+        "#c19a64",
+        "#d8ae8c",
+        "#b77d81",
+        "#ffffff"
+    ];
+
+    for(let i=0;i<30;i++){
+
+        const p=document.createElement("div");
+
+        p.className="firework";
+
+        p.style.left=x+"px";
+        p.style.top=y+"px";
+
+        p.style.background=
+        colors[Math.floor(Math.random()*colors.length)];
+
+        document.body.appendChild(p);
+
+        const angle=
+        (Math.PI*2*i)/30;
+
+        const distance=
+        50+Math.random()*70;
+
+        const moveX=
+        Math.cos(angle)*distance;
+
+        const moveY=
+        Math.sin(angle)*distance;
+
+        p.animate(
+        [
+            {
+                transform:"translate(0,0)",
+                opacity:1
+            },
+            {
+                transform:
+                `translate(${moveX}px,${moveY}px)`,
+                opacity:0
+            }
+        ],
+        {
+            duration:1500,
+            easing:"ease-out"
+        });
+
+        setTimeout(()=>{
+            p.remove();
+        },1500);
+    }
+}
+
+setInterval(createFirework,2500);
+
+setTimeout(createFirework,1000);
+setTimeout(createFirework,2000);
+
+/* Page Transition */
+
+function goToPage2(){
+
+    document.body.classList.add("fade-out");
+
+    setTimeout(()=>{
+
+        window.location.href="page2.html";
+
+    },1000);
+}
+
+</script>
+
+</body>
+</html>

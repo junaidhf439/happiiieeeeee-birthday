@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Chikliiiii ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+    overflow-y:auto;
+
+    background:
+    radial-gradient(circle at top,#fff9f3,transparent 65%),
+    linear-gradient(135deg,#f9eee8,#fffaf5);
+
+    font-family:'Segoe UI',sans-serif;
+
+    padding:40px 0;
+
+    opacity:0;
+
+    animation:fadeIn 1s forwards;
+
+    transition:
+    opacity 1s ease,
+    transform 1s ease,
+    filter 1s ease;
+}
+
+@keyframes fadeIn{
+
+    to{
+        opacity:1;
+    }
+}
+
+.fade-out{
+
+    opacity:0;
+
+    transform:scale(1.05);
+
+    filter:blur(10px);
+}
+
+/* Floating Hearts */
+
+.heart{
+
+    position:absolute;
+
+    pointer-events:none;
+
+    animation:floatUp linear infinite;
+}
+
+@keyframes floatUp{
+
+    from{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-120px);
+        opacity:0;
+    }
+}
+
+/* Letter Card */
+
+.letter-card{
+
+    width:min(94vw,850px);
+
+    margin:auto;
+
+    background:
+    linear-gradient(
+        180deg,
+        #fffdf9,
+        #fff8f2
+    );
+
+    border:1px solid #ead7c3;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.08);
+
+    animation:cardAppear 1s ease;
+
+    position:relative;
+
+    z-index:10;
+}
+
+@keyframes cardAppear{
+
+    from{
+        opacity:0;
+        transform:
+        translateY(40px)
+        scale(.97);
+    }
+
+    to{
+        opacity:1;
+        transform:
+        translateY(0)
+        scale(1);
+    }
+}
+
+.title{
+
+    font-family:'Caveat',cursive;
+
+    font-size:clamp(40px,6vw,60px);
+
+    color:#b77d81;
+
+    margin-bottom:20px;
+
+    text-align:left;
+}
+
+.message{
+
+    font-family:'Caveat',cursive;
+
+    font-size:clamp(24px,4vw,34px);
+
+    line-height:1.8;
+
+    color:#6d4c4c;
+
+    text-align:left;
+
+    white-space:pre-line;
+}
+
+.signature{
+
+    margin-top:25px;
+
+    text-align:right;
+
+    font-family:'Caveat',cursive;
+
+    font-size:clamp(30px,5vw,42px);
+
+    color:#b77d81;
+}
+
+.btn{
+
+    margin-top:30px;
+
+    margin-bottom:20px;
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #bd8b77,
+        #d8ae8c
+    );
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 10px 25px rgba(189,139,119,.35);
+}
+
+@media(max-width:768px){
+
+    .letter-card{
+        padding:25px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="letter-card">
+
+    <div class="title">
+        For My Chikliiiii ❤️
+    </div>
+
+    <div class="message">
+Or betaaa uds mt ho mayus mt ho yrr kufr hai
+
+Or tu na umeed hori h pgl allah prr tawakkul rkh ki hosi kiu koni hosi bi zat s badi koi ki zat h k bhlaa bo kuch bhi krskee bik liyee kuch bhi namumkin koni Orr in sha allah jrurrr Mara sabr ko fhl behtreen triqaa s milsiii
+
+Yrrr betaa tu uds how n ksmm s dil rowee yrrr .
+
+Tu Aya mt soch ki m ters bat koni krro to meri muhabbat km hori hogiii
+
+Meri muhabbat shadid bhadriii h or muskil Ana bhi zruri h mazbotii k liy or apha to biy hi ek dusra ka ha to harmuskil eksth par krnga hnaa haa good girll shabashhh you are my back bone my sweetheart 😋 my browniee
+
+Tuu khushhh ree hmesaaa mn tu muskrati khubsurat lgee or teri to tariff kru hi k alfazz km hai meri duniya h yrr tu sachii m i miss you infinite betaaaa 🫂🥺
+    </div>
+
+    <div class="signature">
+        Yours Always ❤️
+    </div>
+
+    <button class="btn" onclick="goToPage6()">
+        One Last Surprise 👑 →
+    </button>
+
+</div>
+
+<script>
+
+/* Floating Hearts */
+
+for(let i=0;i<40;i++){
+
+    const heart =
+    document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML =
+    ["❤️","💕","💖","💗"]
+    [Math.floor(Math.random()*4)];
+
+    heart.style.left =
+    Math.random()*100+"vw";
+
+    heart.style.fontSize =
+    (15+Math.random()*20)+"px";
+
+    heart.style.animationDuration =
+    (6+Math.random()*8)+"s";
+
+    document.body.appendChild(heart);
+}
+
+/* Next Page */
+
+function goToPage6(){
+
+    document.body.classList.add("fade-out");
+
+    setTimeout(()=>{
+
+        window.location.href="page6.html";
+
+    },1000);
+}
+
+</script>
+
+</body>
+</html>

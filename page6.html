@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Forever & Always ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+    overflow-y:auto;
+
+    background:
+    radial-gradient(circle at top,#fff7f0,transparent 60%),
+    linear-gradient(135deg,#fdf4ee,#fffaf7);
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    opacity:0;
+
+    animation:fadeIn 1s forwards;
+}
+
+@keyframes fadeIn{
+
+    to{
+        opacity:1;
+    }
+}
+
+/* Floating Hearts */
+
+.bg-heart{
+
+    position:absolute;
+
+    pointer-events:none;
+
+    animation:floatUp linear infinite;
+}
+
+@keyframes floatUp{
+
+    from{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-120px);
+        opacity:0;
+    }
+}
+
+/* Main Card */
+
+.card{
+
+    max-width:900px;
+
+    margin:auto;
+
+    background:
+    linear-gradient(
+        180deg,
+        #fffdf9,
+        #fff7f1
+    );
+
+    border:1px solid #ead7c3;
+
+    border-radius:24px;
+
+    padding:40px 25px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.08);
+
+    position:relative;
+
+    z-index:10;
+}
+
+.title{
+
+    font-size:clamp(38px,7vw,70px);
+
+    color:#b77d81;
+
+    font-weight:800;
+
+    margin-bottom:15px;
+}
+
+.name{
+
+    color:#80575a;
+
+    font-size:clamp(24px,5vw,42px);
+
+    margin-bottom:30px;
+}
+
+.section{
+
+    margin-top:30px;
+
+    color:#6d4c4c;
+
+    line-height:1.8;
+
+    font-size:clamp(18px,3vw,28px);
+}
+
+.love{
+
+    margin-top:40px;
+
+    font-size:clamp(40px,8vw,85px);
+
+    color:#ff5b93;
+
+    font-weight:900;
+
+    text-shadow:
+    0 0 15px rgba(255,105,150,.4),
+    0 0 30px rgba(255,105,150,.3);
+}
+
+.names{
+
+    margin-top:20px;
+
+    font-size:clamp(24px,5vw,38px);
+
+    color:#b77d81;
+
+    font-weight:700;
+}
+
+.forever{
+
+    margin-top:35px;
+
+    font-size:clamp(28px,5vw,50px);
+
+    color:#c28b76;
+
+    font-weight:800;
+}
+
+.story{
+
+    margin-top:15px;
+
+    color:#80575a;
+
+    font-size:clamp(18px,3vw,28px);
+
+    font-style:italic;
+}
+
+.btn{
+
+    margin-top:40px;
+
+    padding:16px 35px;
+
+    border:none;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    background:
+    linear-gradient(
+        135deg,
+        #bd8b77,
+        #d8ae8c
+    );
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 10px 25px rgba(189,139,119,.35);
+}
+
+.hidden{
+    display:none;
+}
+
+.celebration{
+
+    margin-top:25px;
+
+    color:#ff5b93;
+
+    font-size:clamp(36px,7vw,70px);
+
+    font-weight:900;
+}
+
+</style>
+</head>
+<body>
+
+<div class="card">
+
+    <div class="title">
+        🎂 HAPPY BIRTHDAY 🎂
+    </div>
+
+    <div class="name">
+        Merii Chikliiiii ❤️
+    </div>
+
+    <div class="section">
+        Today is special because you were born.
+        <br><br>
+        And because of that,
+        the world became a little brighter ❤️
+    </div>
+
+    <div class="section">
+        Thank You For Every Smile.
+        <br>
+        Thank You For Every Memory.
+        <br>
+        Thank You For Every Conversation.
+        <br>
+        Thank You For Simply Being You.
+    </div>
+
+    <div class="love">
+        I LOVE YOUHHH ❤️
+    </div>
+
+    <div class="names">
+        Merii RASMALAI ❤️
+        <br><br>
+        Merii SOAN PAPDI ❤️
+        <br><br>
+        Merii PYAARI CHIKLIIII ❤️
+    </div>
+
+    <div class="section">
+        May Allah protect your smile.
+        <br>
+        May Allah protect your heart.
+        <br>
+        May Allah grant you happiness,
+        peace and endless barakah.
+        <br><br>
+        Ameen ❤️
+    </div>
+
+    <div class="section">
+        No matter what happens...
+        <br>
+        No matter how much time passes...
+        <br>
+        My duas for you
+        will never stop ❤️
+    </div>
+
+    <button class="btn" onclick="celebrate()">
+        ✨ Celebrate ✨
+    </button>
+
+    <div id="celebrateText" class="hidden">
+
+        <div class="celebration">
+            FOREVER & ALWAYS ❤️
+        </div>
+
+        <div class="story">
+            Junaid ❤️ Simran
+            <br><br>
+            A Beautiful Story Still Being Written...
+        </div>
+
+    </div>
+
+    <button
+    class="btn"
+    onclick="window.location.href='page1.html'">
+        ↻ Read Our Story Again
+    </button>
+
+</div>
+
+<script>
+
+/* Floating Background Hearts */
+
+for(let i=0;i<50;i++){
+
+    const heart=document.createElement("div");
+
+    heart.className="bg-heart";
+
+    heart.innerHTML=
+    ["❤️","💕","💖","💗"]
+    [Math.floor(Math.random()*4)];
+
+    heart.style.left=
+    Math.random()*100+"vw";
+
+    heart.style.fontSize=
+    (15+Math.random()*20)+"px";
+
+    heart.style.animationDuration=
+    (6+Math.random()*8)+"s";
+
+    document.body.appendChild(heart);
+}
+
+/* Grand Celebration */
+
+function celebrate(){
+
+    document
+    .getElementById("celebrateText")
+    .classList.remove("hidden");
+
+    for(let i=0;i<120;i++){
+
+        const item=
+        document.createElement("div");
+
+        item.innerHTML=
+        ["❤️","💕","💖","✨","🌹","🎉"]
+        [Math.floor(Math.random()*6)];
+
+        item.style.position="fixed";
+
+        item.style.left=
+        Math.random()*100+"vw";
+
+        item.style.top="-50px";
+
+        item.style.fontSize=
+        (20+Math.random()*25)+"px";
+
+        item.style.zIndex="9999";
+
+        document.body.appendChild(item);
+
+        item.animate(
+        [
+            {
+                transform:"translateY(0) rotate(0deg)",
+                opacity:1
+            },
+            {
+                transform:"translateY(120vh) rotate(360deg)",
+                opacity:0
+            }
+        ],
+        {
+            duration:
+            3000+Math.random()*3000,
+
+            easing:"ease-in"
+        });
+
+        setTimeout(()=>{
+            item.remove();
+        },6000);
+    }
+}
+
+</script>
+
+</body>
+</html>

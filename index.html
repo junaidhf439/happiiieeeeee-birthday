@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Marhey:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+ body{
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+    overflow-y:auto;
+
+    padding:40px 20px;
+
+    text-align:center;
+
+    background:
+    radial-gradient(circle at top,#fff8fb,#ffe6f2 40%,#fffaf8 100%);
+}
+
+
+/* INTRO */
+
+#intro{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at center,
+        #ffb6d9,
+        #ff8cb7,
+        #ff6ba1
+    );
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:99999;
+
+    transition:1.5s;
+
+    overflow:hidden;
+}
+
+.intro-text{
+
+    font-family:'Marhey',cursive;
+
+    color:white;
+
+    font-size:clamp(35px,7vw,90px);
+
+    line-height:1.6;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,.4),
+        0 0 30px rgba(255,215,0,.5);
+
+    animation:zoomText 2s ease;
+}
+
+@keyframes zoomText{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.5);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+    }
+}
+
+.hide-intro{
+
+    opacity:0;
+
+    pointer-events:none;
+}
+
+/* HEARTS */
+
+.heart{
+
+    position:absolute;
+
+    pointer-events:none;
+
+    animation:floatUp linear infinite;
+}
+
+@keyframes floatUp{
+
+    from{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-120px);
+        opacity:0;
+    }
+}
+
+/* STARS */
+
+.star{
+
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    background:#d8ae8c;
+
+    border-radius:50%;
+
+    animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+
+    50%{
+        opacity:.2;
+    }
+}
+
+/* FIREWORKS */
+
+.firework{
+
+    position:absolute;
+
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    box-shadow:
+        0 0 10px currentColor,
+        0 0 20px currentColor,
+        0 0 35px currentColor;
+}
+
+/* CONFETTI */
+
+.confetti{
+
+    position:fixed;
+
+    width:10px;
+
+    height:10px;
+
+    pointer-events:none;
+}
+
+/* MAIN */
+
+.container{
+
+    max-width:900px;
+
+    position:relative;
+
+    z-index:10;
+}
+
+.title{
+
+    font-family:'Marhey',cursive;
+
+    color:#8a6560;
+
+    font-size:clamp(28px,5vw,50px);
+
+    line-height:1.5;
+}
+
+.birthday{
+
+    margin-top:25px;
+
+    font-family:'Marhey',cursive;
+
+    font-size:clamp(40px,7vw,75px);
+
+    font-weight:700;
+
+    color:#8b5e5e;
+
+    line-height:1.4;
+}
+
+.name{
+
+    margin-top:15px;
+
+    font-family:'Marhey',cursive;
+
+    font-size:clamp(28px,6vw,55px);
+
+    color:#7b5557;
+}
+
+.message{
+
+    margin-top:30px;
+
+    font-family:'Marhey',cursive;
+
+    color:#80575a;
+
+    line-height:2;
+
+    font-size:clamp(20px,3vw,30px);
+}
+
+.btn{
+
+    margin-top:40px;
+
+    padding:16px 40px;
+
+    border:none;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    background:
+    linear-gradient(
+        135deg,
+        #bd8b77,
+        #d8ae8c
+    );
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 10px 30px rgba(189,139,119,.35);
+}
+
+</style>
+</head>
+<body>
+
+<!-- INTRO -->
+
+<div id="intro">
+
+    <div class="intro-text">
+
+        🎆🎇✨🎇🎆
+
+        <br><br>
+
+        FINALLLYYYYYYYYYY...
+
+        <br><br>
+
+        THE WAIT IS OVER ❤️
+
+        <br><br>
+
+        IT'S YOURRRRRR
+
+        <br>
+
+        BIRTHDAYYYYYYYYYYY 🎂🥳❤️
+
+    </div>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="container">
+
+    <div class="title">
+
+        For The Most Special Person
+        In My Life ❤️
+
+    </div>
+
+    <div class="birthday">
+
+        HAPPYYYYYYYIIIIIIIEEEEEEE
+        BIRTHDAYYYYYYYYYYYYYYY 🎂🎉🥳🎊✨❤️
+
+    </div>
+
+    <div class="name">
+
+        Merii Qalbiiii ❤️🥺
+
+    </div>
+
+    <div class="message">
+
+        🤲 May Allah Bless You Abundantly ❤️
+
+        <br><br>
+
+        Allah Tuje Hmesa Khush Rkhe
+        Merii Jannnn ❤️🥺
+
+        <br><br>
+
+        🍨 Merii RASMALAI ❤️
+
+        <br><br>
+
+        🍬 Merii SOAN PAPDI ❤️
+
+        <br><br>
+
+        🍰 Merii BARFIII ❤️
+
+        <br><br>
+
+        🌹 Meriii MUHABBATTT ❤️
+
+    </div>
+
+    <button class="btn" onclick="startJourney()">
+
+        Begin Our Story ❤️✨
+
+    </button>
+
+</div>
+
+<script>
+
+/* FIREWORK */
+
+function createFirework(){
+
+    const x=Math.random()*window.innerWidth;
+    const y=Math.random()*window.innerHeight*0.7;
+
+    const colors=[
+        "#ffd700",
+        "#ff69b4",
+        "#ffffff",
+        "#87cefa",
+        "#ff8fab"
+    ];
+
+    for(let i=0;i<25;i++){
+
+        const p=document.createElement("div");
+
+        p.className="firework";
+
+        p.style.left=x+"px";
+        p.style.top=y+"px";
+
+        p.style.background=
+        colors[Math.floor(Math.random()*colors.length)];
+
+        document.body.appendChild(p);
+
+        const angle=
+        (Math.PI*2*i)/25;
+
+        const dist=
+        40+Math.random()*60;
+
+        p.animate(
+        [
+            {
+                transform:"translate(0,0)",
+                opacity:1
+            },
+            {
+                transform:
+                `translate(${Math.cos(angle)*dist}px,${Math.sin(angle)*dist}px)`,
+                opacity:0
+            }
+        ],
+        {
+            duration:1600
+        });
+
+        setTimeout(()=>{
+            p.remove();
+        },1600);
+    }
+}
+
+/* CONFETTI */
+
+function createConfetti(){
+
+    const confetti=document.createElement("div");
+
+    confetti.className="confetti";
+
+    confetti.style.left=
+    Math.random()*100+"vw";
+
+    confetti.style.top="-20px";
+
+    confetti.style.background=
+    [
+        "#ff69b4",
+        "#ffd700",
+        "#87ceeb",
+        "#ffffff",
+        "#ff8fab"
+    ][Math.floor(Math.random()*5)];
+
+    document.body.appendChild(confetti);
+
+    confetti.animate(
+    [
+        {
+            transform:"translateY(0) rotate(0deg)",
+            opacity:1
+        },
+        {
+            transform:"translateY(110vh) rotate(720deg)",
+            opacity:0
+        }
+    ],
+    {
+        duration:4000
+    });
+
+    setTimeout(()=>{
+        confetti.remove();
+    },4000);
+}
+
+/* INTRO EFFECTS */
+
+let introFireworks=
+setInterval(createFirework,700);
+
+let confettiRain=
+setInterval(createConfetti,120);
+
+setTimeout(()=>{
+
+    clearInterval(introFireworks);
+    clearInterval(confettiRain);
+
+    document
+    .getElementById("intro")
+    .classList.add("hide-intro");
+
+},5000);
+
+/* HEARTS */
+
+for(let i=0;i<60;i++){
+
+    let heart=document.createElement("div");
+
+    heart.className="heart";
+
+    heart.innerHTML=
+    ["❤️","💕","💖","💗"]
+    [Math.floor(Math.random()*4)];
+
+    heart.style.left=
+    Math.random()*100+"vw";
+
+    heart.style.fontSize=
+    (15+Math.random()*20)+"px";
+
+    heart.style.animationDuration=
+    (6+Math.random()*8)+"s";
+
+    document.body.appendChild(heart);
+}
+
+/* STARS */
+
+for(let i=0;i<100;i++){
+
+    let star=document.createElement("div");
+
+    star.className="star";
+
+    star.style.left=
+    Math.random()*100+"vw";
+
+    star.style.top=
+    Math.random()*100+"vh";
+
+    document.body.appendChild(star);
+}
+
+function startJourney(){
+
+    window.location.href="page1.html";
+
+}
+
+</script>
+
+</body>
+</html>

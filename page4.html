@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heart Puzzle ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+    overflow-y:auto;
+
+    padding:40px 0;
+
+    background:
+    radial-gradient(circle at top,#fff9f3,transparent 65%),
+    linear-gradient(135deg,#f9eee8,#fffaf5);
+
+    opacity:0;
+    animation:fadeIn 1s forwards;
+}
+
+@keyframes fadeIn{
+    to{
+        opacity:1;
+    }
+}
+
+.fade-out{
+    opacity:0;
+    transform:scale(1.05);
+    filter:blur(10px);
+    transition:1s;
+}
+
+/* Floating Hearts */
+
+.bg-heart{
+    position:absolute;
+    pointer-events:none;
+    animation:floatUp linear infinite;
+}
+
+@keyframes floatUp{
+
+    from{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-120px);
+        opacity:0;
+    }
+}
+
+/* Main */
+
+.container{
+
+    text-align:center;
+
+    width:100%;
+    max-width:900px;
+
+    margin:auto;
+
+    padding:20px;
+
+    position:relative;
+
+    z-index:10;
+}
+
+h1{
+
+    color:#b77d81;
+
+    font-size:clamp(35px,6vw,60px);
+}
+
+.subtitle{
+
+    margin-top:15px;
+
+    color:#8c6b65;
+
+    font-size:1.1rem;
+}
+
+/* Puzzle Grid */
+
+.grid{
+
+    margin-top:50px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,120px);
+
+    gap:20px;
+
+    justify-content:center;
+
+    transition:.5s;
+}
+
+.heart{
+
+    width:120px;
+    height:120px;
+
+    border:none;
+
+    background:white;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    transition:.4s;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:10px;
+
+    overflow:hidden;
+
+    font-size:50px;
+}
+
+.heart:hover{
+
+    transform:translateY(-6px);
+}
+
+.heart.open{
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffd6e7,
+        #fff0f5
+    );
+
+    border:2px solid #ffb6c1;
+
+    color:#b77d81;
+
+    font-weight:700;
+
+    font-size:18px;
+
+    line-height:1.2;
+
+    word-break:break-word;
+
+    transform:scale(1.08);
+}
+
+/* Secret Reveal */
+
+.secret{
+
+    margin-top:40px;
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    transition:1s;
+}
+
+.secret.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+.final-reveal{
+
+    font-size:clamp(34px,6vw,60px);
+
+    color:#b77d81;
+
+    margin-bottom:15px;
+
+    font-weight:800;
+
+    text-shadow:
+        0 0 10px rgba(255,105,180,.4),
+        0 0 25px rgba(255,105,180,.3);
+
+    animation:glowText 2s infinite alternate;
+}
+
+.final-lines{
+
+    font-size:clamp(20px,4vw,30px);
+
+    line-height:1.8;
+
+    color:#80575a;
+
+    font-weight:700;
+
+    max-width:700px;
+
+    margin:auto;
+}
+
+@keyframes glowText{
+
+    from{
+        text-shadow:
+        0 0 10px rgba(255,105,180,.3);
+    }
+
+    to{
+        text-shadow:
+        0 0 25px rgba(255,105,180,.7);
+    }
+}
+
+.btn{
+
+    margin-top:35px;
+
+    margin-bottom:30px;
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #bd8b77,
+        #d8ae8c
+    );
+
+    color:white;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    opacity:0;
+
+    transition:.5s;
+}
+
+.btn.show{
+    opacity:1;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    .grid{
+
+        grid-template-columns:
+        repeat(2,110px);
+
+        gap:15px;
+    }
+
+    .heart{
+
+        width:110px;
+        height:110px;
+    }
+
+    .heart.open{
+
+        font-size:15px;
+    }
+}
+
+@media(max-width:400px){
+
+    .grid{
+
+        grid-template-columns:
+        repeat(2,95px);
+    }
+
+    .heart{
+
+        width:95px;
+        height:95px;
+    }
+
+    .heart.open{
+
+        font-size:13px;
+
+        padding:8px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>A Secret Is Hidden ❤️</h1>
+
+    <p class="subtitle">
+        Click all the hearts to reveal it...
+    </p>
+
+    <div class="grid">
+
+        <button class="heart" onclick="openHeart(this,'I')">❤️</button>
+
+        <button class="heart" onclick="openHeart(this,'LOVE')">❤️</button>
+
+        <button class="heart" onclick="openHeart(this,'YOUHHH')">❤️</button>
+
+        <button class="heart" onclick="openHeart(this,'SOAN')">❤️</button>
+
+        <button class="heart" onclick="openHeart(this,'PAPDI')">❤️</button>
+
+        <button class="heart" onclick="openHeart(this,'CHIKLIIII')">❤️</button>
+
+    </div>
+
+    <div id="secret" class="secret">
+
+        <h2 class="final-reveal">
+            I LOVE YOUHHH ❤️
+        </h2>
+
+        <p class="final-lines">
+            Merii RASMALAI ❤️, Merii SOAN PAPDI ❤️, Merii PYAARI CHIKLIIII ❤️
+        </p>
+
+        <button
+        id="nextBtn"
+        class="btn"
+        onclick="goPage5()">
+
+            Continue To Next Letter 📜 →
+
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+/* Floating Hearts */
+
+for(let i=0;i<40;i++){
+
+    let heart=document.createElement("div");
+
+    heart.className="bg-heart";
+
+    heart.innerHTML=
+    ["❤️","💕","💖","💗"]
+    [Math.floor(Math.random()*4)];
+
+    heart.style.left=
+    Math.random()*100+"vw";
+
+    heart.style.fontSize=
+    (15+Math.random()*20)+"px";
+
+    heart.style.animationDuration=
+    (6+Math.random()*8)+"s";
+
+    document.body.appendChild(heart);
+}
+
+/* Puzzle */
+
+let opened=0;
+
+function openHeart(button,text){
+
+    if(button.classList.contains("open"))
+    return;
+
+    button.classList.add("open");
+
+    button.innerHTML=text;
+
+    opened++;
+
+    if(opened===6){
+
+        document
+        .getElementById("secret")
+        .classList.add("show");
+
+        document
+        .getElementById("nextBtn")
+        .classList.add("show");
+
+        createLoveRain();
+    }
+}
+
+/* Celebration */
+
+function createLoveRain(){
+
+    for(let i=0;i<50;i++){
+
+        let item=document.createElement("div");
+
+        item.innerHTML=
+        ["❤️","💕","💖","✨"]
+        [Math.floor(Math.random()*4)];
+
+        item.style.position="fixed";
+
+        item.style.left=
+        Math.random()*100+"vw";
+
+        item.style.top="-50px";
+
+        item.style.fontSize="28px";
+
+        item.style.zIndex="9999";
+
+        document.body.appendChild(item);
+
+        item.animate(
+        [
+            {
+                transform:"translateY(0)",
+                opacity:1
+            },
+            {
+                transform:"translateY(110vh)",
+                opacity:0
+            }
+        ],
+        {
+            duration:3000+Math.random()*2000
+        });
+
+        setTimeout(()=>{
+            item.remove();
+        },5000);
+    }
+}
+
+/* Next Page */
+
+function goPage5(){
+
+    document.body.classList.add("fade-out");
+
+    setTimeout(()=>{
+
+        window.location.href="page5.html";
+
+    },1000);
+}
+
+</script>
+
+</body>
+</html>
